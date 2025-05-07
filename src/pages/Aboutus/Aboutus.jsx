@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutUs.css';
+import './Aboutus.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import founder1 from '../../assets/founder1.jpg';
 import founder2 from '../../assets/founder2.jpg';
