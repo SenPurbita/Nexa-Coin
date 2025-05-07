@@ -1,0 +1,124 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    color: #ddd;
+    border-bottom: 2px solid #3c3c3c;
+}
+.navbar .logo {
+    width: max(50px, 8vw);
+    height: auto;
+}
+.navbar ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.navbar li{
+    cursor: pointer;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: max(1vw 10px);
+}
+.navbar select{
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 2px solid beige;
+    background: transparent;
+    color: white;
+}
+.navbar option{
+    background-color: #09005c;
+    color: white;
+}
+.signup-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #5403ff, #690299);
+    box-shadow: 0 4px 12px rgba(84, 3, 255, 0.3);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .signup-button:hover {
+    background: linear-gradient(135deg, #3c02b8, #4e0278);
+    transform: translateY(-2px);
+  }
+  
+  .signup-button img {
+    width: 14px;
+    filter: brightness(0) invert(1); /* makes the arrow icon white */
+  }
+  
+
+@media (max-width: 900px){
+    .navbar{
+        padding: 20px 8%;
+    }
+    .navbar button{
+        gap: 8px;
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-right {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .navbar button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .nav-links li {
+    position: relative;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #007bff; /* or any accent color */
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links li:hover::after {
+    width: 100%;
+  }
+  
+  .nav-links li:hover {
+    color: #007bff; /* Optional text color change */
+  }
+  .nav-links li {
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li:hover {
+    transform: scale(1.05);
+    color: #007bff;
+  }
