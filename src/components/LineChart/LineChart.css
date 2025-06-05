@@ -1,0 +1,29 @@
+.coin-area-chart-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.coin-area-chart-container:hover {
+  transform: scale(1.01);
+}
+
+.recharts-label {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .coin-area-chart-container {
+    padding: 0.5rem;
+  }
+
+  .recharts-label {
+    font-size: 10px !important;
+  }
+}

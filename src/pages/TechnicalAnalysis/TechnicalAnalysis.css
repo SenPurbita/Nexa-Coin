@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.tech-analysis-container {
+  font-family: 'Inter', sans-serif;
+  padding: 2rem 3rem;
+  background: linear-gradient(135deg, #0d1117 0%, #121921 100%);
+  color: #e1e4e8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.tech-title {
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #d5dee7;
+  position: relative;
+  animation: fadeInLeft 1s ease forwards;
+  opacity: 0;
+}
+
+.tech-title::after {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #8ab4f8;
+  transition: color 0.3s ease;
+}
+
+.tech-title::after:hover {
+  color: #c8d9ff;
+}
+
+#tradingview_chart {
+  margin-top: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #2e2e2e;
+  width: 100%;
+  max-width: 1200px;
+  height: 700px;
+  box-shadow: 0 0 25px rgba(0, 114, 255, 0.6);
+  animation: glowPulse 4s ease-in-out infinite;
+  background-color: #0b1015;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.spin {
+  border: 8px solid #202830;
+  border-top: 8px solid #58a6ff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+.tech-analysis-button-container {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.tech-analysis-button {
+  background: linear-gradient(270deg, #0072ff, #00c6ff, #0072ff);
+  background-size: 600% 600%;
+  color: white;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  animation: gradientShift 8s ease infinite;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 114, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.tech-analysis-button:hover {
+  box-shadow: 0 8px 30px rgba(0, 198, 255, 0.9);
+  transform: scale(1.08);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 114, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 198, 255, 0.85);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-analysis-container {
+    padding: 1.5rem 1rem;
+  }
+  .tech-title {
+    font-size: 1.8rem;
+  }
+  #tradingview_chart {
+    height: 400px;
+    max-width: 100%;
+  }
+  .tech-analysis-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}

@@ -1,0 +1,182 @@
+.trade-page {
+  background-color: #0d1117;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  animation: fadeInUp 1s ease forwards;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin-bottom: 2rem;
+}
+.trade-buttons-container {
+  display: flex;
+  flex-direction: row; /* side-by-side */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+}
+.action-block {
+  flex: 1 1 300px; /* responsive grow/shrink */
+  position: relative;
+}
+
+
+.main-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.buy-btn {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+.sell-btn {
+  background: linear-gradient(90deg, #ff5e62, #ff9966);
+  color: white;
+}
+
+.main-btn:hover {
+  transform: scale(1.05);
+}
+
+.dropdown, .option-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background-color: #1a1f25;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 20px rgba(255, 94, 98, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown.open, .option-container.show {
+  max-height: 600px;
+  padding: 1rem;
+}
+
+.option-btn {
+  width: 100%;
+  background-color: #2a2f36;
+  border: 1px solid #a38eff;
+  color: #e1e4e8;
+  font-size: 1rem;
+  padding: 12px;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  min-width: 180px;
+}
+
+.option-btn:hover {
+  background-color: #3a3f47;
+  transform: scale(1.05);
+}
+
+.qr-section {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #8ab4f8;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 1rem;
+}
+
+.qr-img {
+  margin-top: 0.5rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  border: 1px solid #2e2e2e;
+}
+
+/* New QR Scanner Button under Sell */
+.qr-sell-btn {
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  border: 1px solid #ffcccb;
+  color: white;
+  font-size: 1rem;
+  padding: 12px;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.qr-sell-btn:hover {
+  background-color: #ff7b72;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .main-btn {
+    font-size: 1rem;
+  }
+
+  .option-btn, .qr-sell-btn {
+    font-size: 0.95rem;
+    min-width: unset;
+  }
+
+  .qr-img {
+    width: 100px;
+    height: 100px;
+  }
+}

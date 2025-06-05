@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './News.css';
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
+
 const CryptoNews = () => {
   const { t } = useTranslation();
   const [news, setNews] = useState([]);
@@ -27,34 +28,38 @@ const CryptoNews = () => {
 
   return (
     <div className="crypto-news-container">
-      <h2>Latest Cryptocurrency News</h2>
+      <h2>{t('Latest Cryptocurrency News')}</h2>
       {loading ? (
-        <p className="loading">Loading news...</p>
+        <p className="loading">{t('Loading news...')}</p>
       ) : (
         <div className="news-grid">
           {news && news.length > 0 ? (
             news.map((item, index) => (
-              <div className="news-card" key={index}>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                className="news-card-link"
+                aria-label={`Read full article: ${item.title}`}
+              >
                 {item.image_url ? (
-                <img
-                  src={item.image_url}
-                  alt={item.title}
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/300x180?text=No+Image';
-                  }}
-                />
-              ) : (
-                <img src="https://via.placeholder.com/300x180?text=No+Image" alt="No image" />
-              )}
+                  <img
+                    src={item.image_url}
+                    alt={item.title}
+                    onError={(e) => {
+                      e.target.src = 'https://via.placeholder.com/300x180?text=No+Image';
+                    }}
+                  />
+                ) : (
+                  <img src="https://via.placeholder.com/300x180?text=No+Image" alt="No image" />
+                )}
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  Read More
-                </a>
-              </div>
+              </a>
             ))
           ) : (
-            <p className="no-news">No news found.</p>
+            <p className="no-news">{t('No news found.')}</p>
           )}
         </div>
       )}

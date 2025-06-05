@@ -45,14 +45,50 @@
     margin: 200px auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 0;  
+    padding-bottom: 0
 }
 .coin-info ul{
     display: flex;
     justify-content: space-between;
     padding: 10px 0px;
     border-bottom:1px solid #5f5d5f ;
+    margin-bottom: 0.5rem; 
+    padding-left: 0;
     list-style: none;
 }
 .coin-info ul :last-child{
     font-weight: 300;
+}
+.tech-analysis-button-container {
+  margin-top: 0rem;  /* very small space above the button */
+  margin-bottom: 20rem; /* optional small space below */
+  text-align: center;
+}
+
+
+.tech-analysis-button {
+  background: linear-gradient(270deg, #0072ff, #00c6ff, #0072ff);
+  background-size: 600% 600%;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  animation: gradientShift 8s ease infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.6);
+}
+
+.tech-analysis-button:hover {
+  box-shadow: 0 6px 25px rgba(0, 198, 255, 0.8);
+  transform: scale(1.05);
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }

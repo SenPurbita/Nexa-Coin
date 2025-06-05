@@ -39,6 +39,7 @@ const Navbar = () => {
       <ul className="nav-links">
         <Link to='/'><li>{t('navbar.home')}</li></Link>
         <Link to='/news'><li>{t('navbar.news')}</li></Link>
+        <Link to='/watchlist'><li>{t('Watch List')}</li></Link>
         <Link to='/aboutus'><li>{t('navbar.about')}</li></Link>
       </ul>
 
